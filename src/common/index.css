@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: x-large;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  width: 600px;
+}
+
+.header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-form {
+  display: flex;
+}
+
+.todo-list {
+  margin: 20px;
+}
+
+.todo-item {
+  margin-bottom: 10px;
+}
+
+.todo-description {
+  font-style: italic;
+}
+
+.task-list {
+  padding-top: 20px;
+}
+
+.task-item {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.task-item-delete {
+  color: lightgray;
+  margin-left: 10px;
+  cursor: pointer;
+}
