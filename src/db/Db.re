@@ -1,7 +1,7 @@
 type user = { email: string, displayName: string, uid: string };
 
 [@bs.module "./firebase.js"]
-external onAuthStateChanged : ((user) => unit) => unit = "onAuthStateChanged";
+external onAuthStateChanged : ((Js.Nullable.t(user)) => unit) => unit = "onAuthStateChanged";
 
 [@bs.module "./firebase.js"]
 external popGoogleAuth: unit => unit = "popGoogleAuth";
@@ -26,3 +26,6 @@ external updateTaskStatus: (~id: string, ~status: bool) => unit = "updateTaskSta
 
 [@bs.module "./firebase.js"]
 external deleteTask: (~id: string) => unit = "deleteTask";
+
+[@bs.module "./firebase.js"]
+external logOut: unit => unit = "logOut";

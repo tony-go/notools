@@ -20,6 +20,14 @@ function popGoogleAuth() {
     });
 }
 
+function onAuthStateChanged(fn) {
+  fb.auth().onAuthStateChanged(fn);
+}
+
+function logOut() {
+  fb.auth().signOut();
+}
+
 function addTodo(name, description, userId) {
   if (!userId) {
     throw new Error('You should provide an ID');
@@ -70,14 +78,11 @@ function deleteTask(taskId) {
   return fb.database().ref('tasks/' + taskId).remove();
 }
 
-function onAuthStateChanged(fn) {
-  fb.auth().onAuthStateChanged(fn);
-}
-
 module.exports = {
   // auth
   popGoogleAuth,
   onAuthStateChanged,
+  logOut,
   // todo
   addTodo,
   getTodos,
