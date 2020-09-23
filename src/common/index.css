@@ -13,9 +13,20 @@ body {
 
 .block {
   width: 600px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 730px) {
+  .block {
+    width: 100%;
+    padding: 20px;
+  }
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 10px;
 }

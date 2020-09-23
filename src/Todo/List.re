@@ -24,7 +24,11 @@ let make = (~user: Db.user) => {
   let (todoName, setTodoName) = React.useState(() => "");
   let (todoDescription, setTodoDescription) = React.useState(() => "");
 
-  let onClick = _event => Db.addTodo(todoName, todoDescription, user.uid);
+  let onClick = _event => {
+    if (String.length(todoName) > 0) {
+      Db.addTodo(todoName, todoDescription, user.uid);
+    }
+  }
   let handleNavigate = id => _event => ReasonReactRouter.push("/todos/" ++ id);
 
   let read_todos = data => {

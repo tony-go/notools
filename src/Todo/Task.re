@@ -1,7 +1,9 @@
 [@react.component]
 let make = (~name: string, ~isDone: bool, ~id: string) => {
-  let onChange = _event => {
-    Db.updateTaskStatus(~id=id, ~status=true);
+  let onChange = event => {
+    let value = ReactEvent.Form.target(event)##checked;
+    Js.log(value);
+    Db.updateTaskStatus(~id=id, ~status=value);
   };
 
   let onDeleteTask = _event => {

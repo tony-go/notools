@@ -60,8 +60,7 @@ let make = (~id: string) => {
     ? <div onKeyPress={handleKeyPress}>
       <h2>
         {state.todo.name->React.string}
-        {" - "->React.string}
-        <span className="todo-description">{state.todo.description->React.string}</span>
+        {String.length(state.todo.description) > 0 ? <span className="todo-description">{(" - " ++ state.todo.description)->React.string}</span> : React.null}
       </h2>
       <Ui.Box direction="row" gap="medium">
         <Ui.TextInput
